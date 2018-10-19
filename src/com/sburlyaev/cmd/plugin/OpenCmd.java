@@ -60,18 +60,19 @@ public class OpenCmd extends AnAction {
             return System.getProperty("user.home");
         }
 
-        if (settings != null && settings.isOpenCurrent()) {
-            FileEditorManager manager = FileEditorManager.getInstance(project);
-            VirtualFile[] openFiles = manager.getSelectedFiles();
-            if (openFiles.length > 0) {
-                VirtualFile openFile = openFiles[0];
-                return Paths.get(openFile.getPath()).getParent().toString();
-            }
-        }
+        // todo: looks like it does not work properly - opens IDE dir..
+//        if (settings != null && settings.isOpenCurrent()) {
+//            FileEditorManager manager = FileEditorManager.getInstance(project);
+//            VirtualFile[] openFiles = manager.getSelectedFiles();
+//            if (openFiles.length > 0) {
+//                VirtualFile openFile = openFiles[0];
+//                return Paths.get(openFile.getPath()).getParent().toString();
+//            }
+//        }
 
         StringBuilder sb = new StringBuilder();
         sb.append(project.getBasePath());
-        if (settings != null) {
+        if (settings != null && !settings.isOpenCurrent()) {
             // Introduce subdirectory support (v0.2)
             String subDirectory = settings.getSubDirectory();
             if (subDirectory != null && !subDirectory.isEmpty()) {
