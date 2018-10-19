@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.sburlyaev.terminal.plugin</id>
-    <name>Native Terminal Plugin</name>
+    <name>Native Terminal</name>
     <version>0.2.3</version>
     <vendor email="sburlyaev7@gmail.com"
             url="https://github.com/sburlyaev/IDEA-Native-Terminal-Plugin">Sergey Burlyaev
@@ -45,7 +45,7 @@
         <action id="com.sburlyaev.cmd.plugin.OpenCmd"
                 class="com.sburlyaev.cmd.plugin.OpenCmd"
                 text="Terminal"
-                description=""
+                description="Opens a project directory"
                 icon="/cmd-icon-16.png">
             <add-to-group group-id="NavBarToolBar" anchor="first"/>
             <add-to-group group-id="MainToolBar" anchor="last"/>
